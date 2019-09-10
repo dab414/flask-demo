@@ -45,7 +45,7 @@ def makeplot():
 
 	dates = [parse(x) for x in dates]
 
-	title = 'Quandl Wiki EOD Stock Prices for ' + ticker + ' during October 2008'
+	title = 'Quandl Wiki EOD Stock Prices for ' + ticker + ' during October 2015'
 	p = figure(x_axis_type = 'datetime', title = title)
 	p.line(dates, prices, line_width = 2)
 	p.xaxis.axis_label = 'Date'
