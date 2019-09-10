@@ -33,7 +33,7 @@ def graph():
 def makeplot():
 	ticker = open('ticker.txt', 'r').read()
 
-	h = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '/data.json?api_key=Qsspq9oLN8EGfAJzg93S&start_date=2015-06-01&end_date=2015-06-30').content
+	h = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '/data.json?api_key=Qsspq9oLN8EGfAJzg93S&start_date=2008-10-01&end_date=2008-10-31').content
 	h = json.loads(h)['dataset_data']['data']
 
 	dates = []
@@ -45,7 +45,7 @@ def makeplot():
 
 	dates = [parse(x) for x in dates]
 
-	title = 'Quandl Wiki EOD Stock Prices for ' + ticker + ' during October 2008'
+	title = 'Quandl Wiki EOD Stock Prices for ' + ticker + ' during October 2008 (The Great Recession!)'
 	p = figure(x_axis_type = 'datetime', title = title)
 	p.line(dates, prices, line_width = 2)
 	p.xaxis.axis_label = 'Date'
